@@ -29,7 +29,7 @@ body {
 
 /* right | photo area */
 .right {
-  background: url('images/IMG_0167.JPG') center / cover no-repeat;
+  background: url('images/IMG_0166.JPG') top / cover no-repeat;
   
   flex: 0 0 75%;
   padding: 50px;
@@ -40,21 +40,22 @@ body {
 }
 
 .right-container { /* formatting 10 images */
-  display: grid;
-  margin: 0 auto; /* keeps container in middle of right side */
-  grid-template-columns: repeat(2, 1fr); /* two columns of images */
-  gap: 100px;
-  width: 80%; /* limits room images occupy */
-  box-sizing: border-box; 
+  display: flex;
+  flex-direction: column;
+  gap: 30px; 
+  padding: 20px;
+  overflow-y: auto;
 }
 
-.right-container img {
-    width: 80%;
-    height: auto;
-    display: block;
-    margin: 0 auto;
-    border-radius: 8px;
+.textbox {
+  background-color: white;
+  padding: 15px;
+  border-radius: 8px;
+  width: 80%;
+  margin: 0 auto;
+  box-sizing: border-box;
 }
+
 
 
 /* OTHER CUSTOMIZATIONS */
@@ -91,32 +92,16 @@ h3{
     margin-bottom: 30px;
 }
 
-.right-container img { /* image enlarge */
-  width: 80%;
-  height: auto;
-  display: block;
-  border-radius: 8px;
-  transition: transform 0.3s ease;
-}
-
-.right-container img:hover {
-  transform: scale(1.1);
-}
 
 a {
-  color: #9cb78a;
+  color: #3c49a2;
   transition: all 0.1s ease; /* hover effect */
 }
 
 a:hover {
-  color: #1a7240;
+  color: #e5e8f9;
   font-weight: bold;      /* make it bold */
-  background-color:#e1f1d1;
+  background-color:#8493b6;
   padding: 2px 4px;       /* improve highlight look */
   border-radius: 3px;
-}
-
-.left img {
-  position: relative;
-  top: -160px;
 }
