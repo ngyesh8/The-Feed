@@ -17,44 +17,52 @@ body {
     cursor: url('images/cursor.png'), auto;
 }
 
-/* left sidebar */
 .left {
     background: url('images/IMG_0168.JPG') center / cover no-repeat;
 
     flex: 0 0 25%;
     padding: 40px;
     box-sizing: border-box;
-    overflow: hidden; /* This might be my new favorite syntax :)*/
+    overflow: hidden;
 }
 
-/* right | photo area */
 .right {
-  background: url('images/IMG_0166.JPG') top / cover no-repeat;
-  
-  flex: 0 0 75%;
-  padding: 50px;
-  display: flex;
-  justify-content: center;   
-  box-sizing: border-box;
-  overflow-y: auto; /* if scrolling is necessary to see all photos*/
-}
-
-.right-container { /* formatting 10 images */
+  background: url('images/IMG_0166.JPG') center / cover no-repeat;
+  min-height: 100vh;   /* full height of screen */
+  width: 100%;         /* full width */
   display: flex;
   flex-direction: column;
-  gap: 30px; 
-  padding: 20px;
+  align-items: center; /* centers windows */
+  gap: 50px;           /* spacing between windows */
+  padding: 50px;
+  box-sizing: border-box;
+  
   overflow-y: auto;
 }
 
-.textbox {
-  background-color: white;
-  padding: 15px;
-  border-radius: 8px;
-  width: 80%;
-  margin: 0 auto;
-  box-sizing: border-box;
+.retro-window {
+  flex-shrink: 0;
+
+  position: relative;
+  width: 640px; /* img size */
+  height: 524px;
+  background: url('images/retrowindow.png') no-repeat;
+  background-size: 100% 100%;
+  overflow-y: auto;
 }
+
+.retro-content {
+  position: absolute;
+  top: 74px;    /* where the white screen starts */
+  left: 11px;
+  right: 28px;
+  bottom: 39px; /* where the white screen ends */
+  background:#CECFE1;
+  overflow-y: auto;      /* scroll inside */
+  overflow-x: hidden;
+  padding: 10px;
+}
+
 
 
 
@@ -63,6 +71,7 @@ h1 {
     font-family: "subway-new-york-std", sans-serif;
     font-weight: 400;
     font-style: normal;
+    color: #271C4A;
 
     font-size: 80px;
     margin-bottom: 10px; /* closer to h2 */
@@ -83,9 +92,22 @@ h3{
     font-family: "kinuta-shin-enpitsu-it-stdn", sans-serif;
     font-weight: 550;
     font-style: normal;
+    color: #3c49a2;
 
     padding-top: 10px;
     line-height: 1.4;
+}
+
+p{
+  font-family: "kinuta-shin-enpitsu-it-stdn", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+
+    padding-top: 10px;
+    line-height: 2;
+    font-size: 16px;
+    color: #323458;
+    
 }
 
 .spacing {
@@ -95,13 +117,14 @@ h3{
 
 a {
   color: #3c49a2;
-  transition: all 0.1s ease; /* hover effect */
+  transition: all 0.2s ease; /* hover effect */
 }
 
 a:hover {
   color: #e5e8f9;
-  font-weight: bold;      /* make it bold */
+  font-weight: bold;
   background-color:#8493b6;
   padding: 2px 4px;       /* improve highlight look */
   border-radius: 3px;
 }
+
